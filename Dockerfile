@@ -19,10 +19,10 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     python3-dev \
     python3-pip \
     git \
+    pipx \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/* \
-      && pip3 install --user --no-cache-dir setuptools \
-      && pip3 install --user --no-cache-dir ansible \
+      && pipx install --system-site-packages --pip-args '--no-cache-dir' ansible \
       && ansible --version
 
 COPY ansible-docker.sh /ansible-docker.sh
