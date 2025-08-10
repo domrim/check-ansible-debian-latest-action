@@ -14,14 +14,12 @@ LABEL "com.github.actions.color"="green"
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
     apt-utils \
     python3-xyzservices \
-    software-properties-common \
     build-essential \
     libffi-dev \
     libssl-dev \
     python3-dev \
     python3-venv \
     python3-pip \
-
     git \
     systemd \
     locales \
@@ -30,7 +28,6 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     libyaml-dev \
     python3-setuptools \
     python3-yaml \
-    software-properties-common \
     systemd-cron sudo iproute2 \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/* \
